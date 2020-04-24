@@ -10,7 +10,7 @@ const Home = props => {
           <h1>Lambda Eats</h1>
         <Link to = {`/pizza`}>
             <button>Order Now!</button>
-        </ Link>
+        </Link>
     </div>
 
 
