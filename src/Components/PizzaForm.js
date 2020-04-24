@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
+import {Link} from 'react-router-dom';
+import Nav from "./Nav";
 
     const formSchema = yup.object().shape({
         name: yup.string().min( 2, `Must be more than 2 characters`).required("Name is a required field"),
@@ -89,7 +91,10 @@ import axios from "axios";
         };
 
         return (
+            <div>
+            <Nav />
             <form onSubmit={formSubmit}>
+                <h2>Build Your Own Pizza</h2>
                 <label htmlFor="name">
                     Name
                     <br/>
@@ -168,5 +173,6 @@ import axios from "axios";
                 <button disabled={buttonDisabled}>Add to Order</button>
                 <pre>{users.map( user => JSON.stringify(user, null, 2))}</pre>
             </form>    
+            </div>
         )
     }
